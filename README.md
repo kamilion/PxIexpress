@@ -23,7 +23,7 @@ The physical design is ROUGHLY as follows:
 * A U-shaped PCB containing two female PCI Express sockets will be developed to link the main board with an optional expansion chassis directly below.
 * Wireless shall be provided by an Atheros ath10k driver supported MiniPCI Express adapter. It is yet to be determined which side of the board to place it on.
 * Four USB type C connectors along the front edge, providing connections to controllers and other user devices such as webcams.
-* Four full sized SD Card slots, corresponding with each 'controller' port. These may be provided via 45 degree header in a ''// \\" pattern to give an 'eyebrow' appearance.
+* Four full sized SD Card slots, corresponding with each 'controller' port. These may be provided via 45 degree header in a ''// \\\\" pattern to give an 'eyebrow' appearance.
 * SD Port 1 shall be connected to the processor and optionally used as a trusted platform boot device, port 2, 3 and 4 may be provided by discrete SD to USB controllers.
 * GPIO implimented developer switch, likely based upon removing a physical screw from the motherboard allowing for the separation of two contacts.
 * At least one rear output will be MicroHDMI, to allow direct connection of an inexpensive head mounted display such as http://www.vufine.com/
@@ -87,6 +87,14 @@ Another aspect of the problem is that the operating system running the game is a
 
 This is one issue that is solved simply by having a specification that is tied to a minimum hardware requirement of the AMD family 17h Zen processor and using -march=znver1 for builds targeting the PxI Express platform.
 
+Purpouse of the ''Top Slot":
+
+I had a discussion with a local wafer fab about modern nanolithography processes and how it could relate to the old MASK-ROM technology used in classic game consoles.
+The result of the discussion was that a mask rom in the range of 128GB to 480GB was quite possible and could be likely be done for under $30 a chip.
+In combination with a PCI express device complex, a flash memory controller could be added to provide writable space for updates, save games, or binary game executables for multiple platforms, while keeping the large graphic and sound resources in mask rom.
+
+This is a modern interpretation of the original golden Legend of Zelda cartridge, with 128KB of mask rom, the nintendo MBC1 page controller, and it's battery-backed 8KB SRAM.
+  (see http://www.computerarcheology.com/NES/Zelda/ for more depth on this concept)  
 
 
 Todo:
