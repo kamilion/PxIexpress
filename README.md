@@ -87,6 +87,18 @@ Another aspect of the problem is that the operating system running the game is a
 
 This is one issue that is solved simply by having a specification that is tied to a minimum hardware requirement of the AMD family 17h Zen processor and using -march=znver1 for builds targeting the PxI Express platform.
 
+Incidentally, this type of project was pursued once before, and was ultimately successful in launching it's product.
+  https://www.kickstarter.com/projects/quo/projectq-run-any-os-the-unique-motherboard  
+
+They raised $189,451 and approached Gigabyte to provide the motherboard design.
+  http://quocomputer.com/product-category/motherboard/  
+
+As far as I can tell, it's still available for purchase, however it's quite expensive, being an Intel CPU based motherboard.
+
+The design we are operating under does not require an expensive north bridge or south bridge chip, merely a processor socket, some PHY chips to drive ports, the ports and sockets themselves, and the passive components surrounding the PHYs and sockets.
+
+PxI Express should be attainable at a very reasonable cost due to AMD's existing long term pursuit of a true System On Chip design.
+
 Purpouse of the ''Top Slot":
 
 I had a discussion with a local wafer fab about modern nanolithography processes and how it could relate to the old MASK-ROM technology used in classic game consoles.
