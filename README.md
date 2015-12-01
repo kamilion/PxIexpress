@@ -37,13 +37,16 @@ The physical design is ROUGHLY as follows:
 ![ExpandCD](https://raw.githubusercontent.com/kamilion/PxIexpress/master/images/sega-cd-gen1-bridge-connector.jpg)
 ![ExpandChassis](https://raw.githubusercontent.com/kamilion/PxIexpress/master/images/sega-cd-gen1-expansion-chassis.jpg)
 * Wireless shall be provided by an Atheros ath10k driver supported MiniPCI Express adapter. It is yet to be determined which side of the board to place it on.
-* Built in Wifi must be provided to be in FCC compliance, where a radio and antenna combination must be evaluated as a single 'device' for qualification.
+* In theory, this could be provided by a short "Cartridge", sandwiching one or two minipcie slots between a male X8 PCIe edge and a female X8 socket with six lanes pinned at the top.
+* In practice, Built in Wifi must be provided to be in FCC compliance, where a radio and antenna combination must be evaluated as a single 'device' for qualification.
 * Various Atheros modules may be qualified for use in the final design. 802.11N shall be considered the minimum acceptable, with 802.11AC being strongly preferred.
 * Bluetooth 4.0 Low energy support will be included if available in the selected Atheros modules.
 * Otherwise, an inexpensive USB2.0 daughterboard will be mounted to one of the bottom USB headers, likely using a CSR-based radio for maximum support.
+  (See https://www.adafruit.com/products/1327 for an example COTS device )  
 * No legacy ports shall be provided in the design. No PS/2 Keyboard/mouse, no LPT parallel, no RS232 serial. Plenty of hubs and cheap USB2.0 adapters for that.
 * GPIO implimented developer switch, likely based upon removing a physical screw from the motherboard allowing for the separation of two contacts.
 * At least one rear output will be MicroHDMI, to allow direct connection of an inexpensive head mounted display such as http://www.vufine.com/
+![ExpandHMD](https://raw.githubusercontent.com/kamilion/PxIexpress/master/images/vufine-head.png)
 * Four USB type C connectors along the front edge, providing connections to controllers and other user devices such as webcams.
 * Four full sized SD Card slots, corresponding with each 'controller' port. These may be provided via 45 degree header in a ''// \\\\" pattern to give an 'eyebrow' appearance.
 * SD Port 1 shall be connected to the processor and optionally used as a trusted platform boot device, port 2, 3 and 4 may be provided by discrete SD to USB controllers.
@@ -72,8 +75,20 @@ Another, somewhat unrelated problem:
 * In theory, combined with AMD's recent open source radeon driver work this could be the first solution allowing compositing from a ''Real" GPU to a mobile SoC's framebuffer memory by running the wayland protocol on both sides.
 * The i.MX6 could composite additional information on top of the GPU output, in a form such as how the Steam Overlay currently operates after a Shift-Tab on PC.
 * This would require additional software on both sides, but there's nothing stopping this from becoming a PCI Express card on it's own and providing remote GPU management outside of this project.
-* The i.MX6q chip is approximately $50 each or less in volume. The i.MX6 DualLite is $32, and the i.MX6 Solo is $25. The datasheets indicates PCIExpress support (see http://www.mouser.com/ds/2/161/IMX6SDLCEC-316634.pdf )
-Current Pricing: http://www.mouser.com/Semiconductors/Integrated-Circuits-ICs/Embedded-Processors-Controllers/Processors-Application-Specialized/_/N-a86sh?Keyword=138628814&FS=True&Ntk=P_MarCom
+* Four SD controllers are provided on the i.MX6 platform. This negates the need for discrete USB to SD adapters for all four SD slots.
+* The i.MX6q chip is approximately $50 each or less in small volumes. The i.MX6 DualLite is $32, and the i.MX6 Solo is $25. qty500+ gets it down to $18.12 for the solo. 
+  The datasheets indicates PCIExpress support (see http://www.mouser.com/ds/2/161/IMX6SDLCEC-316634.pdf )  
+  Current Pricing: http://www.mouser.com/Semiconductors/Integrated-Circuits-ICs/Embedded-Processors-Controllers/Processors-Application-Specialized/_/N-a86sh?Keyword=138628814&FS=True&Ntk=P_MarCom  
+
+Note: This would be a seriously involved project in it's own right. It's cool to think about, and low cost, but is probably the first thing to get cut from the design.
+
+Various reasons for this would be:
+
+* Freescale declining a production volume order during discovery phase
+* Stability problems with driver development (Wayland is still not widely deployed; this may change the situation by providing a 'killer app' hardware demo)
+* Excess Bikeshedding over driver structure, when both sides are under FOSS control and can be iterated over time into better interfaces
+* CPU Vendor really really hating the idea of sticking someone else's ARM on board to ''manage things"
+* Freescale really really hating the idea of being used as someone else's framebuffer implimentation
 
 Product lifecycle information:
 * Intended platform support is from a late 2016 launch to late 2020 official end-of-life date.
