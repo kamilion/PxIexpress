@@ -38,7 +38,7 @@ The software design is ROUGHLY as follows:
 * OpenVSwitch will provide supervised connectivity of guests.
 * Developer switch state will be read, allowing images signed under separate platform keys to be allowed to boot.
 * Forethought for supporting for SteamOS as a guest, and providing high performance graphics.
-* Forethought for supporting Unity3D as a "platform target", as well as running their Editor.
+* Forethought for supporting Unity3D as a "platform target", as well as running their Game Editor directly. (see blogs.unity3d.com/2015/08/26/unity-comes-to-linux-experimental-build-now-available/ )
 
 Another, somewhat unrelated problem:
 * Remote management with IPMI 2.0 stinks. Vendors use an ARM core, a licensed Matrox G200 2D graphics core, some fake USB 1.1 devices, and attempt to manage it all via an i2c bus variant called SMBus shared with the host.
