@@ -32,7 +32,7 @@ The software design is ROUGHLY as follows:
 * Large firmware storage device, partitioned. Potentially an eMMC device, bumping SD port 1 to a discrete SD to USB controller?
 * Processor bringup by coreboot, loading blobs from a signed firmware image over 16MB in size. (Nonfree blobs here still?)
 * Hypervisor should be resident in firmware, default linux operating system rootfs image is resident in tmpfs as a >1GB squashfs image.
-* Initial implimentation will be based upon the Xen virtalization layer, allowing dom0s other than linux to be signed and booted.
+* Initial implimentation will be based upon the Xen virtualization layer, allowing dom0s other than linux to be signed and booted.
 * OS-agnostic, but a certain vendor widely known as wintel likely would not boot natively. (But probably work fine as a paravirtualization guest or under HVM with qemu devices)
 * Heavy reliance on running signed binaries, and allowing isolated guests to run unsigned, potentially malicious, code of their choice.
 * Virtualization Guests are isolated from each other to as strong of a degree as Xen can reasonably enforce.
@@ -40,6 +40,7 @@ The software design is ROUGHLY as follows:
 * Developer switch state will be read, allowing images signed under separate platform keys to be allowed to boot.
 * Forethought for supporting for SteamOS as a guest, and providing high performance graphics.
 * Forethought for supporting Unity3D as a "platform target", as well as running their Game Editor directly. (see http://blogs.unity3d.com/2015/08/26/unity-comes-to-linux-experimental-build-now-available/ )
+* First game console supporting integrated game development tools as a first class platform feature if Unity Technologies plays ball with us.
 
 Another, somewhat unrelated problem:
 * Remote management with IPMI 2.0 stinks. Vendors use an ARM core, a licensed Matrox G200 2D graphics core, some fake USB 1.1 devices, and attempt to manage it all via an i2c bus variant called SMBus shared with the host.
@@ -48,6 +49,8 @@ Another, somewhat unrelated problem:
 * In theory, combined with AMD's recent open source radeon driver work this could be the first solution allowing compositing from a ''Real" GPU to a mobile SoC's framebuffer memory by running the wayland protocol on both sides.
 * The i.MX6 could composite additional information on top of the GPU output, in a form such as how the Steam Overlay currently operates after a Shift-Tab on PC.
 * This would require additional software on both sides, but there's nothing stopping this from becoming a PCI Express card on it's own and providing remote GPU management outside of this project.
+* The i.MX6q chip is approximately $50 each or less in volume. The i.MX6 DualLite is $32, and the i.MX6 Solo is $25. The datasheets indicates PCIExpress support (see http://www.mouser.com/ds/2/161/IMX6SDLCEC-316634.pdf )
+Current Pricing: http://www.mouser.com/Semiconductors/Integrated-Circuits-ICs/Embedded-Processors-Controllers/Processors-Application-Specialized/_/N-a86sh?Keyword=138628814&FS=True&Ntk=P_MarCom
 
 Product lifecycle information:
 * Intended platform support is from a late 2016 launch to late 2020 official end-of-life date.
