@@ -11,12 +11,22 @@ A motherboard design will be developed around either a socketed AMD processor, o
 
 The physical design is ROUGHLY as follows:
 * External power brick providing 10v-15.8V unregulated power if 16v capacitors are used or >21V regulated power if 24v capacitors are used.
-* This design should be automotive and airline compatible, as well as being operational from common lead acid batteries.
-* Aluminium outer chassis (custom folded aluminium sheet)
+* Likely source will be what is available from http://www.mini-box.com/AC-DC-power-supplies
+* Female standard eATX 8 pin 12V connection will be recessed from the rear of the mainboard, perhaps on the bottom, between the two 2.5" SATA 'bays'.
+* Motherboard will be responsible for producing all nessicary voltages from the single 12V source. (+5v, +3.3v, and CPU +vcores, but not -15v for rs232 unless absolutely nessicary)
+* A Daughterboard design will be provided similar to the PicoPSU from http://www.mini-box.com/DC-DC that snaps onto the 8 pin connector, a drastic simplification to their 20/24 pin design.
+* Unregulated power input shall be provided by purchasing an existing http://www.mini-box.com/DCDC-USB-200 module and connecting it to the eATX connector via a pigtail.
+* This design should be automotive and airline compatible, as well as being operational from common lead acid or lithium chemistry batteries.
+* Any sort of battery charging is out of scope and should be done by third party design.
+* Aluminium outer chassis in a shape similar to the Sega Genesis Generation II console layout made from a single cut and folded aluminium sheet, keeping per-unit costs as low cost as possible.
+* Chassis bottom shall terminate in either a standard 75mm x 75mm or 100mm x 100mm VESA-style mounting plate, exposing the family of bottom connectors.
+* A solid bottom plate will be supplied with the unit, preferably cut or stamped from the same aluminium sheet.
+* Product information shall be etched into the aluminium chassis at a location other than the removable bottom plate.
 * MiniITX size 170mm x 170mm (6.7 x 6.7 in) motherboard (Or smaller)
 * Both sides of the board will be utilized for maximum user expansion.
 * Two unpopulated DDR4 SODIMM slots for user memory expansion, requirement of AMD central processor with integrated 2GB/4GB/8GB ''HBM" memory stacks.
 * The bottom shall contain no less than two SATA compatible sockets with 12V, 5V, and 3.3V power suitable for mounting existing SATA SSD and 2.5" hard disks upside down.
+* They should be mounted as far outboard as possible, preserving the central board area for the bottom of the CPU socket, power daughterboard, and bottom-mounted connectors.
 * Two or more standard dual port USB headers shall also be provided on the bottom of the board. It is yet to be determined if these should be 2.0 or 3.0 style headers.
 * The top of the board shall contain the processor and a single top mounted female PCI Express X8 socket situated as a ''Cartridge" port would be on a classic game console.
 * The right side of the board shall end in a male PCI Express edge, most likely 8 links unless a suitable inexpensive PCIE bridge is found to route 16 links.
