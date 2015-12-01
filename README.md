@@ -26,6 +26,7 @@ The physical design is ROUGHLY as follows:
 * Four full sized SD Card slots, corresponding with each 'controller' port. These may be provided via 45 degree header in a ''// \\" pattern to give an 'eyebrow' appearance.
 * SD Port 1 shall be connected to the processor and optionally used as a trusted platform boot device, port 2, 3 and 4 may be provided by discrete SD to USB controllers.
 * GPIO implimented developer switch, likely based upon removing a physical screw from the motherboard allowing for the separation of two contacts.
+* At least one rear output will be MicroHDMI, to allow direct connection of an inexpensive head mounted display such as http://www.vufine.com/
 
 The software design is ROUGHLY as follows:
 * Large firmware storage device, partitioned. Potentially an eMMC device, bumping SD port 1 to a discrete SD to USB controller?
