@@ -19,6 +19,7 @@ The physical design is ROUGHLY as follows:
 * This design should be automotive and airline compatible, as well as being operational from common lead acid or lithium chemistry batteries.
 * Any sort of battery charging is out of scope and should be done by third party design.
 * Aluminium outer chassis in a shape similar to the Sega Genesis Generation II console layout made from a single cut and folded aluminium sheet, keeping per-unit costs as low cost as possible.
+![PaintedGenesis](https://raw.githubusercontent.com/kamilion/PxIexpress/master/images/sega-genesis-gen2-painted.jpg)
 * Chassis bottom shall terminate in either a standard 75mm x 75mm or 100mm x 100mm VESA-style mounting plate, exposing the family of bottom connectors.
 * A solid bottom plate will be supplied with the unit, preferably cut or stamped from the same aluminium sheet.
 * Product information shall be etched into the aluminium chassis at a location other than the removable bottom plate.
@@ -29,8 +30,12 @@ The physical design is ROUGHLY as follows:
 * They should be mounted as far outboard as possible, preserving the central board area for the bottom of the CPU socket, power daughterboard, and bottom-mounted connectors.
 * Two or more standard dual port USB headers shall also be provided on the bottom of the board. It is yet to be determined if these should be 2.0 or 3.0 style headers.
 * The top of the board shall contain the processor and a single top mounted female PCI Express X8 socket situated as a ''Cartridge" port would be on a classic game console.
+![CoverGenesis](https://raw.githubusercontent.com/kamilion/PxIexpress/master/images/sega-genesis-gen2-expansion-port-and-cover.jpg)
 * The right side of the board shall end in a male PCI Express edge, most likely 8 links unless a suitable inexpensive PCIE bridge is found to route 16 links.
+![ExpandGenesis](https://raw.githubusercontent.com/kamilion/PxIexpress/master/images/sega-genesis-gen2-expansion-port.jpg)
 * A U-shaped PCB containing two female PCI Express sockets will be developed to link the main board with an optional expansion chassis directly below.
+![ExpandCD](https://raw.githubusercontent.com/kamilion/PxIexpress/master/images/sega-cd-gen1-bridge-connector.jpg)
+![ExpandChassis](https://raw.githubusercontent.com/kamilion/PxIexpress/master/images/sega-cd-gen1-expansion-chassis.jpg)
 * Wireless shall be provided by an Atheros ath10k driver supported MiniPCI Express adapter. It is yet to be determined which side of the board to place it on.
 * Built in Wifi must be provided to be in FCC compliance, where a radio and antenna combination must be evaluated as a single 'device' for qualification.
 * Various Atheros modules may be qualified for use in the final design. 802.11N shall be considered the minimum acceptable, with 802.11AC being strongly preferred.
@@ -80,9 +85,14 @@ Product lifecycle information:
 
 Rational:
 
-For years, I've been getting progressively sicker of the gaming industry; purchasing console after console, breaking them for homebrew use, and watching the manufacturers rapdily close down support for hardware sold before the platform has officially died.
+For years, I've been getting progressively sicker of the gaming industry; purchasing console after console, breaking them for homebrew use, and watching the manufacturers rapdily close down support for hardware sold before the platform has officially died....
+
+![TowerOfPowerGen1](https://raw.githubusercontent.com/kamilion/PxIexpress/master/images/sega-genesis-gen1-fully-expanded.jpg)
 
 I've watched as people make huge claims ( http://arstechnica.com/gaming/2015/07/ars-reader-so-a-guy-walks-into-my-shop-with-an-infinium-phantom-console/ ) and fail to follow through, or outright fail before they even launch due to making poor technology choices.
+
+![TowerOfPowerGen1](https://raw.githubusercontent.com/kamilion/PxIexpress/master/images/sega-genesis-gen1-tower-of-power.gif)
+![TowerOfPowerGen2](https://raw.githubusercontent.com/kamilion/PxIexpress/master/images/sega-genesis-gen2-tower-of-power.jpg)
 
 Apple computer moved from the IBM PowerPC to the Intel/AMD64 platform.
 
