@@ -49,4 +49,63 @@ Another, somewhat unrelated problem:
 * The i.MX6 could composite additional information on top of the GPU output, in a form such as how the Steam Overlay currently operates after a Shift-Tab on PC.
 * This would require additional software on both sides, but there's nothing stopping this from becoming a PCI Express card on it's own and providing remote GPU management outside of this project.
 
+Product lifecycle information:
+* Intended platform support is from a late 2016 launch to late 2020 official end-of-life date.
+* Handover of the platform keys to a community group concerned with keeping the platform alive and secure has been planned since day one.
+* Hardware should be physically engineered to last 10 years before failing under a ''best case scenario". Preferably, units should die of abuse before old age.
+* User accessable external ports should be specified with reinforced connectors rated to at least 100,000 cycles. (USB, HDMI, Ethernet)
+* The user is intended to upgrade the unit, but should not be required to do so under most use cases.
+* The largest costs anticipated to be associated with providing user upgradability are: DDR4 memory slots & supporting passive components.
+
+Rational:
+
+For years, I've been getting progressively sicker of the gaming industry; purchasing console after console, breaking them for homebrew use, and watching the manufacturers rapdily close down support for hardware sold before the platform has officially died.
+
+I've watched as people make huge claims ( http://arstechnica.com/gaming/2015/07/ars-reader-so-a-guy-walks-into-my-shop-with-an-infinium-phantom-console/ ) and fail to follow through, or outright fail before they even launch due to making poor technology choices.
+
+Apple computer moved from the IBM PowerPC to the Intel/AMD64 platform.
+
+The most recent two game console set top boxes from Sony and Microsoft have been powered by an AMD64 processor provided by AMD.
+
+One of them runs a BSD derived OS. So far as I can tell, it's locked up tight with DRM.
+
+But of course, under the BSD license, that's quite all right.
+
+  I most recently purchased a triple-A game title called "Watch_dogs", with the intent to play it on my AMD 1100T hexcore with SLI Radeon R7 260X cards.  
+  I purchased said GPU cards because they were supposedly very close to the same silicon that was driving the two game consoles. Surpassed them, actually.  
+  Both in shader core count, and in clock speed. However, what I got was not very playable. First Steam downloaded the game. Then it installed Ubisoft's U-Play service.  
+  Then it downloaded so many updates with u-play, I wanted to cry. Then steam got very angry it's local copy changed, and redownloaded everything.  
+  After the second update cycle with u-play, I was able to launch the game (a day later than when I purchased it)  
+  It crashed after ten minutes of play. I had to deal with updating my drivers, which then caused issues with the operating system.  
+  I still have yet to enter into any of the storyline missions; trying to start them crashes the game.  
+  Despite having two GPUs, each of which is singly more powerful than the game console variant, I am still unable to get playable framerates at 720p.  
+  The console version of the game plays smoothly at 1080p, or so I hear from online reviews.  
+
+One aspect of the problem is that the game binary is built for a generic architecture to run on many PCs. Performance drops because of this.
+
+Another aspect of the problem is that the operating system running the game is also not optimized for the hardware; and is built for a generic platform.
+
+This is one issue that is solved simply by having a specification that is tied to a minimum hardware requirement of the AMD family 17h Zen processor and using -march=znver1 for builds targeting the PxI Express platform.
+
+
+
+Todo:
+
+  [ ] File for California Public Benefit Corporation, allowing donations to be tax deductable  
+  [ ] Find a crowdfunding site that will be acceptable towards this hardware project's requirements  
+  [ ] Crowdfund a *minimum* of $200,000 to cover prototyping and initial production run  
+  [ ] Find someone willing to provide prototype PCBs for the i.MX6 Board Management Controller design  
+  [ ] Find someone willing to provide prototype PCBs for the motherboard design  
+  [ ] Find an ODM willing to provide production PCBs (Likely someone like Gigabyte, MSI, or Tyan)  
+  [ ] Begin working with prototype board layouts  
+  [ ] Find a pick and place facility willing to populate PCBs if ODM declines volume production  
+  [ ] Order a prototype run of >20 units for core developers/backers  
+  [ ] Begin firmware development on prototype hardware  
+  [ ] Bootstrap Ubuntu Linux 16.04 LTS and selected other distributions  
+  [ ] Finalize board designs  
+  [ ] Initial production run of >1000 units for backers, first come first served  
+  [ ] Repeat production runs  
+  [ ] Improve included software stack  
+  [ ] Work with upstream code developers to port other userspace runtimes such as Android to the hardware  
+
 Please see the wiki for more information, or open an issue to start a discussion!
