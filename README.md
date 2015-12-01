@@ -96,17 +96,20 @@ Product lifecycle information:
 * Hardware should be physically engineered to last 10 years before failing under a ''best case scenario". Preferably, units should die of abuse before old age.
 * User accessable external ports should be specified with reinforced connectors rated to at least 100,000 cycles. (USB, HDMI, Ethernet)
 * The user is intended to upgrade the unit, but should not be required to do so under most use cases.
-* The largest costs anticipated to be associated with providing user upgradability are: DDR4 memory slots & supporting passive components.
+* The largest costs anticipated to be associated with providing user upgradability are: DDR4 memory slots & supporting passive components. 
+
+The production ODM will already have volume quantity of processor socket on hand. (Which will be the single largest cost in prototyping -- getting individual CPU sockets and not melting them.)
 
 Rational:
 
-For years, I've been getting progressively sicker of the gaming industry; purchasing console after console, breaking them for homebrew use, and watching the manufacturers rapdily close down support for hardware sold before the platform has officially died....
+For years, I've been getting progressively sicker of the gaming industry; purchasing console after console, breaking them for homebrew use, and watching the manufacturers rapidly close down support for hardware sold before the platform has officially died....
 
 ![TowerOfPowerGen1](https://raw.githubusercontent.com/kamilion/PxIexpress/master/images/sega-genesis-gen1-fully-expanded.jpg)
 
-I've watched as people make huge claims ( http://arstechnica.com/gaming/2015/07/ars-reader-so-a-guy-walks-into-my-shop-with-an-infinium-phantom-console/ ) and fail to follow through, or outright fail before they even launch due to making poor technology choices.
+I've watched as people make huge claims ( http://arstechnica.com/gaming/2015/07/ars-reader-so-a-guy-walks-into-my-shop-with-an-infinium-phantom-console/ ) and fail to follow through, or outright fail before they even launch due to making poor technology choices, or choosing overly expensive "bling" features over core functionality.
 
 ![TowerOfPowerGen1](https://raw.githubusercontent.com/kamilion/PxIexpress/master/images/sega-genesis-gen1-tower-of-power.gif)
+(Spot the Xband modem and win nothing at all...)
 ![TowerOfPowerGen2](https://raw.githubusercontent.com/kamilion/PxIexpress/master/images/sega-genesis-gen2-tower-of-power.jpg)
 
 Apple computer moved from the IBM PowerPC to the Intel/AMD64 platform.
@@ -134,10 +137,12 @@ Another aspect of the problem is that the operating system running the game is a
 This is one issue that is solved simply by having a specification that is tied to a minimum hardware requirement of the AMD family 17h Zen processor and using -march=znver1 for builds targeting the PxI Express platform.
 
 Incidentally, this type of project was pursued once before, and was ultimately successful in launching it's product.
-  https://www.kickstarter.com/projects/quo/projectq-run-any-os-the-unique-motherboard  
+
+https://www.kickstarter.com/projects/quo/projectq-run-any-os-the-unique-motherboard
 
 They raised $189,451 and approached Gigabyte to provide the motherboard design.
-  http://quocomputer.com/product-category/motherboard/  
+
+http://quocomputer.com/product-category/motherboard/
 
 As far as I can tell, it's still available for purchase, however it's quite expensive, being an Intel CPU based motherboard.
 
@@ -154,6 +159,7 @@ In combination with a PCI express device complex, a flash memory controller coul
 This is a modern interpretation of the original golden Legend of Zelda cartridge, with 128KB of mask rom, the nintendo MBC1 page controller, and it's battery-backed 8KB SRAM.
   (see http://www.computerarcheology.com/NES/Zelda/ for more depth on this concept)  
 
+[![NintendoYTthumb](https://raw.githubusercontent.com/kamilion/PxIexpress/master/images/nintendo-and-console-design-yt-thumb.jpg)](http://youtu.be/Ulb1CTV6F2I)
 
 Todo:
 
