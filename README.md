@@ -32,11 +32,19 @@ The physical design is ROUGHLY as follows:
 * The right side of the board shall end in a male PCI Express edge, most likely 8 links unless a suitable inexpensive PCIE bridge is found to route 16 links.
 * A U-shaped PCB containing two female PCI Express sockets will be developed to link the main board with an optional expansion chassis directly below.
 * Wireless shall be provided by an Atheros ath10k driver supported MiniPCI Express adapter. It is yet to be determined which side of the board to place it on.
+* Built in Wifi must be provided to be in FCC compliance, where a radio and antenna combination must be evaluated as a single 'device' for qualification.
+* Various Atheros modules may be qualified for use in the final design. 802.11N shall be considered the minimum acceptable, with 802.11AC being strongly preferred.
+* Bluetooth 4.0 Low energy support will be included if available in the selected Atheros modules.
+* Otherwise, an inexpensive USB2.0 daughterboard will be mounted to one of the bottom USB headers, likely using a CSR-based radio for maximum support.
+* No legacy ports shall be provided in the design. No PS/2 Keyboard/mouse, no LPT parallel, no RS232 serial. Plenty of hubs and cheap USB2.0 adapters for that.
+* GPIO implimented developer switch, likely based upon removing a physical screw from the motherboard allowing for the separation of two contacts.
+* At least one rear output will be MicroHDMI, to allow direct connection of an inexpensive head mounted display such as http://www.vufine.com/
 * Four USB type C connectors along the front edge, providing connections to controllers and other user devices such as webcams.
 * Four full sized SD Card slots, corresponding with each 'controller' port. These may be provided via 45 degree header in a ''// \\\\" pattern to give an 'eyebrow' appearance.
 * SD Port 1 shall be connected to the processor and optionally used as a trusted platform boot device, port 2, 3 and 4 may be provided by discrete SD to USB controllers.
-* GPIO implimented developer switch, likely based upon removing a physical screw from the motherboard allowing for the separation of two contacts.
-* At least one rear output will be MicroHDMI, to allow direct connection of an inexpensive head mounted display such as http://www.vufine.com/
+* A UVC webcam PCB will be designed to plug a COTS HD webcam module into the front controller ports, with an asthetic design to re-use the existing SD slot access indicators as eyebrows.
+* A third party project will utilize the final design as a sleek 'robot head', mounting it to a torso-and-limbs through the bottom USB headers and the VESA-mount bottom plate.
+* To achieve this asthetic, symmetry must be used for the external design and port layout. In theory, a passive PCIExpress cable can be used to operate discrete GPUs in the chest cavity.
 
 The software design is ROUGHLY as follows:
 * Large firmware storage device, partitioned. Potentially an eMMC device, bumping SD port 1 to a discrete SD to USB controller?
